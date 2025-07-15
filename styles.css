@@ -29,7 +29,7 @@ body {
 
 .button-grid {
   display: grid;
-  grid-template-columns: repeat(4, 10rem);
+  grid-template-columns: repeat(4, 8rem);
   gap: 0.8rem;
   width: max-content;
 }
@@ -37,9 +37,9 @@ body {
 .button-grid > button {
   padding: 10px;
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   width: 100%;
-  height: 5rem;
+  height: 4rem;
 }
 
 .clr-btn,
