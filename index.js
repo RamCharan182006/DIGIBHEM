@@ -116,7 +116,8 @@ function evaluation() {
   if (
     input.value === "Invalid Expression" ||
     input.value === "Infinity" ||
-    input.value === "NaN"
+    input.value === "NaN" ||
+    input.value === "-Infinity"
   ) {
     setTimeout(() => {
       input.value = "";
