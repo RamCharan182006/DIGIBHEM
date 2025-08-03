@@ -1,0 +1,383 @@
+* {
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.2s ease, border 0.3s ease;
+  transition-property: background-color, color, transform, border;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.heading {
+
+  font-size: 3rem;
+  color: #bf3c38;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 360px;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #252525;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.container > input {
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: right;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 8rem);
+  gap: 0.8rem;
+  width: max-content;
+}
+
+.button-grid > button {
+  padding: 10px;
+  margin: 0;
+  font-size: 1.5rem;
+  width: 100%;
+  height: 4rem;
+}
+
+.clr-btn,
+.back-btn {
+  background-color: #ff3b30;
+  border-radius: 0.6rem;
+}
+
+button {
+  outline: none;
+  border: none;
+  user-select: none;
+  color: #ffffff;
+}
+
+.input-btn {
+  background-color: #494949;
+}
+
+.equals-btn {
+  background-color: #ff9500;
+  border-radius: 0.6rem;
+}
+
+.btn-keydown {
+  background-color: #ff9500;
+}
+
+.calc-screen {
+  background-color: #111111;
+  color: aliceblue;
+  outline: none;
+  user-select: none;
+  border: aliceblue;
+}
+
+/* Mobile-first base styles */
+.container > input {
+  font-size: 0.9rem;
+  padding: 1rem;
+  text-align: right;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  transition: max-width 0.4s ease;
+}
+
+.dark-body .container {
+  transition: max-width 0.4s ease;
+}
+
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.3rem;
+  width: 100%;
+}
+.op-btn {
+  border-radius: 0.6rem;
+}
+
+.button-grid > button {
+  padding: 0.8rem;
+  margin: 0;
+  font-size: 1rem;
+  width: 100%;
+  height: 3rem;
+}
+
+/* Tablet (501px - 800px) */
+@media (min-width: 501px) and (max-width: 800px) {
+  .container {
+    max-width: 350px;
+  }
+
+  .container > input {
+    font-size: 1.2rem;
+    padding: 1.2rem;
+  }
+
+  .button-grid > button {
+    font-size: 1.2rem;
+    height: 3.5rem;
+  }
+}
+
+/* Laptop/Desktop (801px and up) */
+@media (min-width: 801px) {
+  .container {
+    max-width: 420px;
+  }
+
+  .container > input {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .button-grid {
+    gap: 0.5rem;
+  }
+
+  .button-grid > button {
+    font-size: 1.3rem;
+    height: 3.5rem;
+  }
+}
+
+/* Hover effects */
+.input-clicked {
+  background-color: #ff9500;
+}
+
+.del-clicked {
+  background-color: white;
+  color: #ff3b30;
+}
+
+/* Theme toggle button */
+.dark-mode {
+  background-color: #000000;
+  font-size: 1rem;
+  border: 1px solid wheat;
+  padding: 0.7rem;
+  border-radius: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 0;
+}
+
+/* Dark Mode: .dark-body styles */
+
+.dark-body {
+  background-color: #cfd8d3;
+  font-family: "Inter", sans-serif;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.dark-body .container {
+  background-color: #7d988e;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+
+
+.container,
+.dark-body .container {
+  transition: padding 0.4s ease;
+}
+
+
+.dark-body .calc-screen {
+  background-color: #e6cc95;
+  color: #1f1f1f;
+  font-size: 1.4rem;
+  padding: 1.2rem;
+  text-align: right;
+  border: 1px solid #b89e5f;
+  border-radius: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+.dark-body .button-grid > button {
+  background-color: #9dc1cc;
+  color: #101010;
+  font-size: 1.05rem;
+  border: 1px solid #7fb3c0;
+  padding: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.dark-body .button-grid > button:hover {
+  background-color: #74acc1;
+  transform: scale(1.04);
+}
+
+.dark-body .op-btn {
+  background-color: #e6a23c;
+  color: #2d1a00;
+  font-weight: 600;
+  border: 1px solid #cc8e33;
+  border-radius: 0.6rem;
+}
+
+.dark-body .equals-btn {
+  background-color: #008c72;
+  color: #f3ffe6;
+  font-weight: bold;
+  border: 1px solid #00765f;
+  border-radius: 0.6rem;
+}
+
+.dark-body .clr-btn {
+  background-color: #d9534f;
+  color: #fff4ee;
+  font-weight: 600;
+  border: 1px solid #bf3c38;
+  border-radius: 0.6rem;
+}
+
+.dark-body .back-btn {
+  background-color: #e67e22;
+  color: #fff5eb;
+  font-weight: 600;
+  border: 1px solid #cc6c1c;
+  border-radius: 0.6rem;
+}
+
+.dark-body h1 {
+  font-size: 3rem;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+/* Dark mode media queries */
+
+/* Extra Small Devices (≤ 375px) */
+@media (max-width: 375px) {
+  .dark-body .container {
+    padding: 1rem;
+  }
+
+  .dark-body .calc-screen {
+    font-size: 1.1rem;
+    padding: 0.9rem;
+  }
+
+  .dark-body .button-grid > button {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  .dark-body .equals-btn {
+    font-size: 1rem;
+  }
+}
+
+/* Small Devices (376px - 600px) */
+@media (min-width: 376px) and (max-width: 600px) {
+  .dark-body .container {
+    padding: 1.2rem;
+  }
+
+  .dark-body .calc-screen {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  .dark-body .button-grid > button {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .dark-body .equals-btn {
+    font-size: 1.05rem;
+  }
+}
+
+/* Medium Devices (601px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .dark-body .container {
+    padding: 1.5rem;
+  }
+
+  .dark-body .calc-screen {
+    font-size: 1.3rem;
+    padding: 1.1rem;
+  }
+
+  .dark-body .button-grid > button {
+    font-size: 1.05rem;
+    padding: 0.9rem;
+  }
+
+  .dark-body .equals-btn {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large Devices (901px and above) */
+@media (min-width: 901px) {
+  .dark-body .container {
+    max-width: 400px;
+    padding: 2rem;
+  }
+
+  .dark-body .calc-screen {
+    font-size: 1.5rem;
+  }
+
+  .dark-body .button-grid > button {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+}
+
+.dark-mode:hover {
+  cursor: pointer;
+}

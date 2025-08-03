@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Calculator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+
+    <h1 class="heading" style="display: block;">Digital Calculator
+      <button class="dark-mode">Light Mode☀️</button>
+    </h1>
+    <div class="container">
+
+      <input type="text" class="calc-screen" readonly />
+      <div class="button-grid">
+        <button class="clr-btn">AC</button>
+        <button class="back-btn">X</button>
+        <button class="input-btn op-btn">/</button>
+        <button class="input-btn op-btn">.</button>
+        <button class="input-btn op-btn">(</button>
+        <button class="input-btn num-btn">0</button>
+        <button class="input-btn op-btn">)</button>
+        <button class="input-btn op-btn">+</button>
+        <button class="input-btn num-btn">7</button>
+        <button class="input-btn num-btn">8</button>
+        <button class="input-btn num-btn">9</button>
+        <button class="input-btn op-btn">-</button>
+        <button class="input-btn num-btn">4</button>
+        <button class="input-btn num-btn">5</button>
+        <button class="input-btn num-btn">6</button>
+        <button class="input-btn op-btn">*</button>
+        <button class="input-btn num-btn">1</button>
+        <button class="input-btn num-btn">2</button>
+        <button class="input-btn num-btn">3</button>
+        <button class="equals-btn">=</button>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.3.1/math.min.js"></script>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
